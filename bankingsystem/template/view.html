@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Coustomer details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'topnav.css' %}">
+    <link rel="stylesheet" href="{% static 'view.css' %}">
+    <link rel="stylesheet" href="{% static 'Table.css' %}">
+
+</head>
+<body style="background-color:#F5F5F5" >
+
+
+     <div class="topnav">
+
+          <li>
+
+              <a class="active" Target=" _top" href="/">Home</a>`
+              <a  href="/view" Target="_self"> Customer's detail </a>
+              <a href="/Register" Target="_self"> Register </a>
+              <a href="/transfer" Target="_self"> Transfer  </a>
+          </li>
+      </div>
+
+
+
+        <h2  style="color:black">Customer's Detail</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr >
+
+            <th style="background-color:black">Username</th>
+            <th style="background-color:black">Name</th>
+            <th style="background-color:black">Email</th>
+            <th style="background-color:black">Balance</th>
+                <th style="background-color:black">Operation</th>
+        </tr>
+        </thead>
+        <tbody >
+        {% for user in user %}
+        <form method="POST\" action="">{% csrf_token %}
+            {% csrf_token %}
+         <tr>
+            <td>{{ user.Username }}</td>
+            <td>  {{ user.name }}</td>
+            <td> {{ user.email }}</td>
+            <td>Rs.{{ user.balance }}</td>
+             <th><button  onclick="/transfer" type="submit" value={{user.Username}} name="user" value="/transfer/<str:username> ">  {% csrf_token %}Transfer </button></th>
+\         </tr>
+
+        </form>
+        {% endfor %}
+
+
+        <tbody>
+    </table>
+</div>
+
+
+
+
+</body>
+</html>

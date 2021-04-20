@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'topnav.css' %}">
+    <link rel="stylesheet" href="{% static 'Register.css' %}">
+
+<style>
+
+    #heading {
+
+  width: 650px;
+  padding: 10px;
+  border: 6px solid gray;
+  margin: 20px;
+  font-family :monospace;
+  box-shadow: 10px 10px 8px 10px #888888;
+  text-align: center
+
+    }
+
+</style>
+
+</head>
+<body  >
+
+   <div class="topnav">
+
+          <li>
+
+              <a class="active" Target=" _top" href="/">Home</a>`
+              <a  href="/view" Target="_self"> Customer's detail </a>
+              <a href="/Register" Target="_self"> Register </a>
+              <a href="/Transfer" Target="_self"> Transfer  </a>
+          </li>
+      </div>
+     <h1 id ="heading">Your Bank is most Secure bank in this world</h1>
+
+  <div>
+  <div class="login">
+    <div class="login-screen">
+      <div class="app-title">
+        <h1>Register</h1>
+      </div>
+ <form method="POST" action="">
+                {% csrf_token %}
+
+      <div class="login-form">
+        <div class="control-group">
+        <input type="text" class="login-field" name="username" value="" placeholder="username" id="login-name">
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+
+        <div class="control-group">
+        <input type="text " class="login-field" name="name" value="" placeholder="name" id="login-name">
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+
+        <div class="control-group">
+        <input type="text" class="login-field" value="" name="email" placeholder="email" id="login-name">
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+
+        <div class="control-group">
+        <input type="text" class="login-field" value="" name="balance" placeholder="balance" id="login-name">
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+
+        <div class="control-group">
+        <input type="password" class="login-field" name="password" value="" placeholder="password" id="login-pass" >
+        <label class="login-field-icon fui-lock" for="login-pass"></label>
+        </div>
+
+      <button type="submit" class="btn btn-primary" onSubmit="alert('Thank you for your Register.')"; >Submit</button>
+        <a class="login-link" href="/"> Register</a>
+      </div>
+     </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
